@@ -8,7 +8,9 @@ public class snakeLadder {
 	public static void main(String[] args) {
 
 		int player = 0;
-		while (player < 100)
+		int player1 = 0;
+		int player2 = 0;
+		while (player1 < 100 && player2 < 100)
 			;
 		int count = 0;
 
@@ -31,11 +33,18 @@ public class snakeLadder {
 				player = 0;
 
 			}
-
+			if (count % 2 == 0) {
+				player1 = player;
+				System.out.println("Player1 position" + player1);
+			} else {
+				player2 = player;
+				System.out.println("Player2 position" + player2);
+			}
 			count++;
-			System.out.println("Count the number of times dice roll" + count);
-
+			System.out.println("Player cuurent position is" + player);
 		}
+		System.out.println("Number of times dice played: " + player);
+		System.out.println("Position" + player);
 
 	}
 
