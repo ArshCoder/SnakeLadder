@@ -7,29 +7,26 @@ public class snakeLadder {
 
 	public static void main(String[] args) {
 
-		int startposition = 0;
-		while (startposition < 100)
+		int player = 0;
+		while (player < 100)
 			;
 
-		int option = (int) Math.floor(Math.floor(Math.random() * 10) % 3);
-		int diceRoll = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+		int option = (int) (Math.random() * 3);
+		int diceRoll = (int) (Math.random() * 6 + 1);
 		System.out.println("Dice Rolled You Get : " + diceRoll);
 
 		if (option == LADDER) {
-			startposition += diceRoll;
-			System.out.println("You got ladder" + startposition);
+			player += diceRoll;
+			if (player > 100)
+				player = player - diceRoll;
 		} else if (option == SNAKE) {
-			startposition -= diceRoll;
-			System.out.println("You Bitten By Snake " + startposition);
+			player -= diceRoll;
+
 		} else if (option == NO_PLAY) {
-			startposition += diceRoll;
-			System.out.println("No Play for You " + startposition);
-			if (startposition < 0) {
-				startposition = 0;
-				System.out.println("Player at StartPosition" + startposition);
-			}
+			player += diceRoll;
 
 		}
 
 	}
+
 }
