@@ -10,6 +10,7 @@ public class snakeLadder {
 		int player = 0;
 		while (player < 100)
 			;
+		int count = 0;
 
 		int option = (int) (Math.random() * 3);
 		int diceRoll = (int) (Math.random() * 6 + 1);
@@ -19,11 +20,20 @@ public class snakeLadder {
 			player += diceRoll;
 			if (player > 100)
 				player = player - diceRoll;
+
 		} else if (option == SNAKE) {
 			player -= diceRoll;
 
 		} else if (option == NO_PLAY) {
 			player += diceRoll;
+			;
+			if (player < 0) {
+				player = 0;
+
+			}
+
+			count++;
+			System.out.println("Count the number of times dice roll" + count);
 
 		}
 
