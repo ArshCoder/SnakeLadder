@@ -8,6 +8,8 @@ public class snakeLadder {
 	public static void main(String[] args) {
 
 		int startposition = 0;
+		while (startposition < 100)
+			;
 
 		int option = (int) Math.floor(Math.floor(Math.random() * 10) % 3);
 		int diceRoll = (int) (Math.floor(Math.random() * 10) % 6 + 1);
@@ -20,11 +22,14 @@ public class snakeLadder {
 			startposition -= diceRoll;
 			System.out.println("You Bitten By Snake " + startposition);
 		} else if (option == NO_PLAY) {
-
+			startposition += diceRoll;
 			System.out.println("No Play for You " + startposition);
+			if (startposition < 0) {
+				startposition = 0;
+				System.out.println("Player at StartPosition" + startposition);
+			}
 
 		}
 
 	}
-
 }
